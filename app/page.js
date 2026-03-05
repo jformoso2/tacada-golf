@@ -23,19 +23,19 @@ const t = {
       gu: ["Articles & Guides", "In-depth content for every level"],
     },
     cards: [
-      { s: "eq", title: "Complete Iron Distance Guide", desc: "Average distances for every club with interactive chart.", tag: "POPULAR", cat: "Irons" },
-      { s: "eq", title: "Hybrid vs Long Iron", desc: "3H or 3I? Data-driven comparison for your bag.", tag: "NEW", cat: "Hybrids" },
-      { s: "eq", title: "Best Drivers 2026", desc: "Top picks for distance, forgiveness, and value.", tag: "GUIDE", cat: "Drivers" },
-      { s: "eq", title: "Wedge Loft & Bounce", desc: "Build the perfect wedge setup for your short game.", tag: "ESSENTIAL", cat: "Wedges" },
-      { s: "nu", title: "Palatinose: The Golfer's Secret Fuel", desc: "How this low-GI carb eliminates your back-nine crash.", tag: "SCIENCE", cat: "Nutrition" },
-      { s: "nu", title: "On-Course Nutrition Protocol", desc: "Hole-by-hole eating plan for all 18.", tag: "PROTOCOL", cat: "Energy" },
-      { s: "nu", title: "Pre-Round Meal Guide", desc: "What to eat 2 hours before tee time.", tag: "GUIDE", cat: "Nutrition" },
-      { s: "to", title: "Driving Range Simulator", desc: "Hit every club and watch the ball fly.", tag: "INTERACTIVE", cat: "Simulator" },
-      { s: "to", title: "Club Distance Calculator", desc: "Personalized distances based on your swing speed.", tag: "TOOL", cat: "Calculator" },
-      { s: "to", title: "Handicap Tracker", desc: "Track rounds and watch your handicap improve.", tag: "COMING SOON", cat: "Tracker" },
-      { s: "gu", title: "Beginner's Complete Guide", desc: "Everything to start playing golf with confidence.", tag: "BEGINNERS", cat: "Basics" },
-      { s: "gu", title: "Breaking 100: A Roadmap", desc: "Step-by-step strategy to break the 100 barrier.", tag: "STRATEGY", cat: "Scoring" },
-      { s: "gu", title: "Course Management 101", desc: "Think smarter — play to your strengths.", tag: "MENTAL", cat: "Strategy" },
+      { s: "eq", title: "Complete Iron Distance Guide", desc: "Average distances for every club with interactive chart.", tag: "POPULAR", cat: "Irons", link: null },
+      { s: "eq", title: "Hybrid vs Long Iron", desc: "3H or 3I? Data-driven comparison for your bag.", tag: "NEW", cat: "Hybrids", link: null },
+      { s: "eq", title: "Best Drivers 2026", desc: "Top picks for distance, forgiveness, and value.", tag: "GUIDE", cat: "Drivers", link: null },
+      { s: "eq", title: "Wedge Loft & Bounce", desc: "Build the perfect wedge setup for your short game.", tag: "ESSENTIAL", cat: "Wedges", link: null },
+      { s: "nu", title: "Palatinose: The Golfer's Secret Fuel", desc: "How this low-GI carb eliminates your back-nine crash.", tag: "SCIENCE", cat: "Nutrition", link: null },
+      { s: "nu", title: "On-Course Nutrition Protocol", desc: "Hole-by-hole eating plan for all 18.", tag: "PROTOCOL", cat: "Energy", link: null },
+      { s: "nu", title: "Pre-Round Meal Guide", desc: "What to eat 2 hours before tee time.", tag: "GUIDE", cat: "Nutrition", link: null },
+      { s: "to", title: "Driving Range Simulator", desc: "Hit every club and watch the ball fly.", tag: "INTERACTIVE", cat: "Simulator", link: null },
+      { s: "to", title: "Club Distance Calculator", desc: "Personalized distances based on your swing speed.", tag: "TOOL", cat: "Calculator", link: null },
+      { s: "to", title: "Handicap Tracker", desc: "Track rounds and watch your handicap improve.", tag: "COMING SOON", cat: "Tracker", link: null },
+      { s: "gu", title: "What is a Golf Handicap?", desc: "Complete guide to understanding, calculating, and improving your handicap.", tag: "NEW", cat: "Handicap", link: "/guias/handicap" },
+      { s: "gu", title: "Breaking 100: A Roadmap", desc: "Step-by-step strategy to break the 100 barrier.", tag: "STRATEGY", cat: "Scoring", link: null },
+      { s: "gu", title: "Course Management 101", desc: "Think smarter — play to your strengths.", tag: "MENTAL", cat: "Strategy", link: null },
     ],
     stats: ["Club Guides", "Interactive Tools", "Languages", "Performance Articles"],
     nl: ["Join the Fairway", "Weekly tips, tools & guides to your inbox.", "Subscribe"],
@@ -55,19 +55,19 @@ const t = {
       gu: ["Artigos & Guias", "Conteúdo aprofundado para todos os níveis"],
     },
     cards: [
-      { s: "eq", title: "Guia Completo de Distâncias", desc: "Distâncias médias para cada taco com gráfico interativo.", tag: "POPULAR", cat: "Ferros" },
-      { s: "eq", title: "Híbrido vs Ferro Longo", desc: "3H ou 3I? Comparação baseada em dados.", tag: "NOVO", cat: "Híbridos" },
-      { s: "eq", title: "Melhores Drivers 2026", desc: "Top escolhas em distância, perdão e custo-benefício.", tag: "GUIA", cat: "Drivers" },
-      { s: "eq", title: "Loft & Bounce dos Wedges", desc: "Monte o setup perfeito para seu jogo curto.", tag: "ESSENCIAL", cat: "Wedges" },
-      { s: "nu", title: "Palatinose: O Combustível Secreto", desc: "Como esse carb de baixo IG elimina a fadiga nos últimos 9.", tag: "CIÊNCIA", cat: "Nutrição" },
-      { s: "nu", title: "Protocolo Nutricional no Campo", desc: "Plano alimentar buraco a buraco para os 18.", tag: "PROTOCOLO", cat: "Energia" },
-      { s: "nu", title: "Guia de Refeição Pré-Jogo", desc: "O que comer 2h antes do tee time.", tag: "GUIA", cat: "Nutrição" },
-      { s: "to", title: "Simulador de Driving Range", desc: "Acerte cada taco e veja a bola voar.", tag: "INTERATIVO", cat: "Simulador" },
-      { s: "to", title: "Calculadora de Distâncias", desc: "Distâncias personalizadas pela sua velocidade de swing.", tag: "FERRAMENTA", cat: "Calculadora" },
-      { s: "to", title: "Rastreador de Handicap", desc: "Acompanhe suas voltas e veja seu handicap melhorar.", tag: "EM BREVE", cat: "Rastreador" },
-      { s: "gu", title: "Guia Completo para Iniciantes", desc: "Tudo para começar a jogar golfe com confiança.", tag: "INICIANTES", cat: "Básico" },
-      { s: "gu", title: "Quebrando os 100", desc: "Estratégia passo a passo para quebrar a barreira.", tag: "ESTRATÉGIA", cat: "Pontuação" },
-      { s: "gu", title: "Gestão de Campo 101", desc: "Pense mais inteligente em cada buraco.", tag: "MENTAL", cat: "Estratégia" },
+      { s: "eq", title: "Guia Completo de Distâncias", desc: "Distâncias médias para cada taco com gráfico interativo.", tag: "POPULAR", cat: "Ferros", link: null },
+      { s: "eq", title: "Híbrido vs Ferro Longo", desc: "3H ou 3I? Comparação baseada em dados.", tag: "NOVO", cat: "Híbridos", link: null },
+      { s: "eq", title: "Melhores Drivers 2026", desc: "Top escolhas em distância, perdão e custo-benefício.", tag: "GUIA", cat: "Drivers", link: null },
+      { s: "eq", title: "Loft & Bounce dos Wedges", desc: "Monte o setup perfeito para seu jogo curto.", tag: "ESSENCIAL", cat: "Wedges", link: null },
+      { s: "nu", title: "Palatinose: O Combustível Secreto", desc: "Como esse carb de baixo IG elimina a fadiga nos últimos 9.", tag: "CIÊNCIA", cat: "Nutrição", link: null },
+      { s: "nu", title: "Protocolo Nutricional no Campo", desc: "Plano alimentar buraco a buraco para os 18.", tag: "PROTOCOLO", cat: "Energia", link: null },
+      { s: "nu", title: "Guia de Refeição Pré-Jogo", desc: "O que comer 2h antes do tee time.", tag: "GUIA", cat: "Nutrição", link: null },
+      { s: "to", title: "Simulador de Driving Range", desc: "Acerte cada taco e veja a bola voar.", tag: "INTERATIVO", cat: "Simulador", link: null },
+      { s: "to", title: "Calculadora de Distâncias", desc: "Distâncias personalizadas pela sua velocidade de swing.", tag: "FERRAMENTA", cat: "Calculadora", link: null },
+      { s: "to", title: "Rastreador de Handicap", desc: "Acompanhe suas voltas e veja seu handicap melhorar.", tag: "EM BREVE", cat: "Rastreador", link: null },
+      { s: "gu", title: "O Que é o Handicap no Golfe?", desc: "Guia completo para entender, calcular e melhorar seu handicap.", tag: "NOVO", cat: "Handicap", link: "/guias/handicap" },
+      { s: "gu", title: "Quebrando os 100", desc: "Estratégia passo a passo para quebrar a barreira.", tag: "ESTRATÉGIA", cat: "Pontuação", link: null },
+      { s: "gu", title: "Gestão de Campo 101", desc: "Pense mais inteligente em cada buraco.", tag: "MENTAL", cat: "Estratégia", link: null },
     ],
     stats: ["Guias de Tacos", "Ferramentas Interativas", "Idiomas", "Artigos de Performance"],
     nl: ["Entre no Fairway", "Dicas, ferramentas e guias toda semana no seu email.", "Inscrever-se"],
@@ -90,6 +90,18 @@ const secColors = { eq: "#22d3ee", nu: "#22c55e", to: "#f59e0b", gu: "#8b5cf6" }
 export default function Home() {
   const [lang, setLang] = useState("pt");
   const l = t[lang];
+
+  const CardInner = ({ card }) => (
+    <>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+        <span style={{ fontSize: "0.6rem", fontWeight: 700, color: tagCol[card.tag] || C.accent, background: `${tagCol[card.tag] || C.accent}18`, padding: "3px 8px", borderRadius: 6, letterSpacing: "0.5px" }}>{card.tag}</span>
+        <span style={{ fontSize: "0.65rem", color: C.dim }}>{card.cat}</span>
+      </div>
+      <div style={{ fontSize: "0.9rem", fontWeight: 700, marginBottom: 6, lineHeight: 1.3 }}>{card.title}</div>
+      <div style={{ fontSize: "0.75rem", color: C.muted, lineHeight: 1.5 }}>{card.desc}</div>
+      {card.link && <div style={{ marginTop: 10, fontSize: "0.73rem", color: C.accent, fontWeight: 600 }}>{lang === "pt" ? "Ler artigo →" : "Read article →"}</div>}
+    </>
+  );
 
   return (
     <div>
@@ -153,16 +165,14 @@ export default function Home() {
               <div style={{ height: 3, width: 60, background: secColors[sec], borderRadius: 2, marginTop: 8, marginLeft: 38 }} />
             </div>
             <div className="cards-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 12 }}>
-              {l.cards.filter(c => c.s === sec).map((card, i) => (
-                <div key={i} style={{ background: C.card2, borderRadius: 14, padding: "16px 18px", border: `1px solid ${C.border}`, transition: "border-color 0.2s" }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-                    <span style={{ fontSize: "0.6rem", fontWeight: 700, color: tagCol[card.tag] || C.accent, background: `${tagCol[card.tag] || C.accent}18`, padding: "3px 8px", borderRadius: 6, letterSpacing: "0.5px" }}>{card.tag}</span>
-                    <span style={{ fontSize: "0.65rem", color: C.dim }}>{card.cat}</span>
-                  </div>
-                  <div style={{ fontSize: "0.9rem", fontWeight: 700, marginBottom: 6, lineHeight: 1.3 }}>{card.title}</div>
-                  <div style={{ fontSize: "0.75rem", color: C.muted, lineHeight: 1.5 }}>{card.desc}</div>
-                </div>
-              ))}
+              {l.cards.filter(c => c.s === sec).map((card, i) => {
+                const cardStyle = { background: C.card2, borderRadius: 14, padding: "16px 18px", border: `1px solid ${C.border}`, transition: "border-color 0.2s", textDecoration: "none", color: "inherit", display: "block" };
+                return card.link ? (
+                  <a key={i} href={card.link} style={cardStyle}><CardInner card={card} /></a>
+                ) : (
+                  <div key={i} style={{ ...cardStyle, opacity: 0.7, cursor: "default" }}><CardInner card={card} /><div style={{ marginTop: 8, fontSize: "0.65rem", color: C.dim }}>{lang === "pt" ? "Em breve..." : "Coming soon..."}</div></div>
+                );
+              })}
             </div>
           </div>
         ))}
