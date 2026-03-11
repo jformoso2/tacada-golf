@@ -2,10 +2,24 @@
 import { useState } from "react";
 
 const C = {
-  bg: "#0a0f1a", card: "#111827", card2: "#1a2236",
-  accent: "#22d3ee", green: "#22c55e", gold: "#f59e0b",
-  purple: "#8b5cf6", pink: "#ec4899", red: "#ef4444",
-  text: "#e2e8f0", muted: "#94a3b8", dim: "#475569", border: "#1e293b",
+  bg: "#f8f6f1",
+  card: "#ffffff",
+  card2: "#f0ede6",
+  accent: "#4a7c59",
+  accentLight: "#6b9e7a",
+  gold: "#b8860b",
+  goldLight: "#d4a847",
+  cream: "#f5f1e8",
+  dark: "#1a2e1a",
+  text: "#2d3a2e",
+  muted: "#6b7c6b",
+  dim: "#99a899",
+  border: "#d4cfc2",
+  borderLight: "#e8e3d9",
+  hero: "#1a2e1a",
+  purple: "#6b5b7b",
+  red: "#a04040",
+  blue: "#4a6b8a",
 };
 
 const t = {
@@ -23,7 +37,7 @@ const t = {
       gu: ["Articles & Guides", "In-depth content for every level"],
     },
     cards: [
-      { s: "eq", title: "Complete Iron Distance Guide", desc: "Average distances for every club with interactive chart.", tag: "POPULAR", cat: "Irons", link: "/equipamento/distancias" },
+      { s: "eq", title: "Complete Iron Distance Guide", desc: "Average distances for every club with interactive chart.", tag: "POPULAR", cat: "Irons", link: null },
       { s: "eq", title: "Hybrid vs Long Iron", desc: "3H or 3I? Data-driven comparison for your bag.", tag: "NEW", cat: "Hybrids", link: null },
       { s: "eq", title: "Best Drivers 2026", desc: "Top picks for distance, forgiveness, and value.", tag: "GUIDE", cat: "Drivers", link: null },
       { s: "eq", title: "Wedge Loft & Bounce", desc: "Build the perfect wedge setup for your short game.", tag: "ESSENTIAL", cat: "Wedges", link: null },
@@ -55,7 +69,7 @@ const t = {
       gu: ["Artigos & Guias", "Conteúdo aprofundado para todos os níveis"],
     },
     cards: [
-      { s: "eq", title: "Guia Completo de Distâncias", desc: "Distâncias médias para cada taco com gráfico interativo.", tag: "POPULAR", cat: "Ferros", link: "/equipamento/distancias" },
+      { s: "eq", title: "Guia Completo de Distâncias", desc: "Distâncias médias para cada taco com gráfico interativo.", tag: "POPULAR", cat: "Ferros", link: null },
       { s: "eq", title: "Híbrido vs Ferro Longo", desc: "3H ou 3I? Comparação baseada em dados.", tag: "NOVO", cat: "Híbridos", link: null },
       { s: "eq", title: "Melhores Drivers 2026", desc: "Top escolhas em distância, perdão e custo-benefício.", tag: "GUIA", cat: "Drivers", link: null },
       { s: "eq", title: "Loft & Bounce dos Wedges", desc: "Monte o setup perfeito para seu jogo curto.", tag: "ESSENCIAL", cat: "Wedges", link: null },
@@ -76,16 +90,16 @@ const t = {
 };
 
 const tagCol = {
-  POPULAR: "#f59e0b", NEW: "#22c55e", NOVO: "#22c55e", GUIDE: "#22d3ee", GUIA: "#22d3ee",
-  ESSENTIAL: "#8b5cf6", ESSENCIAL: "#8b5cf6", SCIENCE: "#ec4899", "CIÊNCIA": "#ec4899",
-  PROTOCOL: "#ef4444", PROTOCOLO: "#ef4444", INTERACTIVE: "#22d3ee", INTERATIVO: "#22d3ee",
-  TOOL: "#22c55e", FERRAMENTA: "#22c55e", "COMING SOON": "#475569", "EM BREVE": "#475569",
-  BEGINNERS: "#f59e0b", INICIANTES: "#f59e0b", STRATEGY: "#8b5cf6", "ESTRATÉGIA": "#8b5cf6",
-  MENTAL: "#ec4899",
+  POPULAR: C.gold, NEW: "#4a7c59", NOVO: "#4a7c59", GUIDE: C.blue, GUIA: C.blue,
+  ESSENTIAL: C.purple, ESSENCIAL: C.purple, SCIENCE: "#8a5a6b", "CIÊNCIA": "#8a5a6b",
+  PROTOCOL: C.red, PROTOCOLO: C.red, INTERACTIVE: C.accent, INTERATIVO: C.accent,
+  TOOL: "#4a7c59", FERRAMENTA: "#4a7c59", "COMING SOON": C.dim, "EM BREVE": C.dim,
+  BEGINNERS: C.gold, INICIANTES: C.gold, STRATEGY: C.purple, "ESTRATÉGIA": C.purple,
+  MENTAL: "#8a5a6b",
 };
 
 const secIcons = { eq: "🏌️", nu: "🔬", to: "🛠️", gu: "📚" };
-const secColors = { eq: "#22d3ee", nu: "#22c55e", to: "#f59e0b", gu: "#8b5cf6" };
+const secColors = { eq: C.accent, nu: "#6b9e7a", to: C.gold, gu: C.purple };
 
 export default function Home() {
   const [lang, setLang] = useState("pt");
@@ -94,61 +108,72 @@ export default function Home() {
   const CardInner = ({ card }) => (
     <>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-        <span style={{ fontSize: "0.6rem", fontWeight: 700, color: tagCol[card.tag] || C.accent, background: `${tagCol[card.tag] || C.accent}18`, padding: "3px 8px", borderRadius: 6, letterSpacing: "0.5px" }}>{card.tag}</span>
-        <span style={{ fontSize: "0.65rem", color: C.dim }}>{card.cat}</span>
+        <span style={{ fontSize: "0.6rem", fontWeight: 700, color: tagCol[card.tag] || C.accent, background: `${tagCol[card.tag] || C.accent}15`, padding: "3px 8px", borderRadius: 6, letterSpacing: "0.5px", textTransform: "uppercase" }}>{card.tag}</span>
+        <span style={{ fontSize: "0.65rem", color: C.dim, fontStyle: "italic" }}>{card.cat}</span>
       </div>
-      <div style={{ fontSize: "0.9rem", fontWeight: 700, marginBottom: 6, lineHeight: 1.3 }}>{card.title}</div>
-      <div style={{ fontSize: "0.75rem", color: C.muted, lineHeight: 1.5 }}>{card.desc}</div>
-      {card.link && <div style={{ marginTop: 10, fontSize: "0.73rem", color: C.accent, fontWeight: 600 }}>{lang === "pt" ? "Ler artigo →" : "Read article →"}</div>}
+      <div style={{ fontSize: "0.92rem", fontWeight: 700, marginBottom: 6, lineHeight: 1.3, color: C.dark, fontFamily: "Georgia, serif" }}>{card.title}</div>
+      <div style={{ fontSize: "0.78rem", color: C.muted, lineHeight: 1.6, fontFamily: "system-ui, sans-serif" }}>{card.desc}</div>
+      {card.link && <div style={{ marginTop: 10, fontSize: "0.75rem", color: C.accent, fontWeight: 600, fontFamily: "system-ui, sans-serif" }}>{lang === "pt" ? "Ler artigo →" : "Read article →"}</div>}
     </>
   );
 
   return (
-    <div>
+    <div style={{ background: C.bg }}>
       {/* Nav */}
       <nav style={{
         display: "flex", alignItems: "center", justifyContent: "space-between",
-        padding: "14px 20px", borderBottom: `1px solid ${C.border}`,
-        background: "rgba(10,15,26,0.92)", position: "sticky", top: 0, zIndex: 10,
+        padding: "16px 24px", borderBottom: `1px solid ${C.border}`,
+        background: "#ffffffee", position: "sticky", top: 0, zIndex: 10,
         backdropFilter: "blur(12px)",
       }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <span style={{ fontSize: "1.3rem" }}>⛳</span>
-          <span style={{ fontSize: "1.1rem", fontWeight: 800, color: C.accent }}>{l.brand}</span>
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <span style={{ fontSize: "1.4rem" }}>⛳</span>
+          <span style={{ fontSize: "1.15rem", fontWeight: 800, color: C.dark, fontFamily: "Georgia, serif", letterSpacing: "-0.5px" }}>Tacada Golf</span>
         </div>
-        <div style={{ display: "flex", gap: 16, alignItems: "center", flexWrap: "wrap" }}>
-          <div className="nav-links" style={{ display: "flex", gap: 16 }}>
+        <div style={{ display: "flex", gap: 20, alignItems: "center", flexWrap: "wrap" }}>
+          <div className="nav-links" style={{ display: "flex", gap: 20 }}>
             {l.nav.map((n, i) => (
-              <span key={i} style={{ fontSize: "0.8rem", color: i === 0 ? C.accent : C.muted, fontWeight: i === 0 ? 700 : 400 }}>{n}</span>
+              <span key={i} style={{ fontSize: "0.82rem", color: i === 0 ? C.accent : C.muted, fontWeight: i === 0 ? 700 : 500, fontFamily: "system-ui, sans-serif" }}>{n}</span>
             ))}
           </div>
           <button onClick={() => setLang(lang === "en" ? "pt" : "en")} style={{
-            background: C.card2, border: `1px solid ${C.border}`, borderRadius: 8,
-            padding: "5px 12px", color: C.text, fontSize: "0.75rem", fontWeight: 600,
+            background: C.cream, border: `1px solid ${C.border}`, borderRadius: 8,
+            padding: "6px 14px", color: C.text, fontSize: "0.75rem", fontWeight: 600,
           }}>{l.langBtn}</button>
         </div>
       </nav>
 
-      <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 20px" }}>
+      <div style={{ maxWidth: 920, margin: "0 auto", padding: "0 24px" }}>
         {/* Hero */}
-        <div style={{ textAlign: "center", padding: "50px 0 30px" }}>
-          <h1 className="hero-title" style={{ fontSize: "2.4rem", fontWeight: 900, margin: 0, lineHeight: 1.1 }}>
-            <span style={{ color: C.accent }}>{l.brand}</span>
+        <div style={{
+          textAlign: "center", padding: "56px 20px 40px",
+          background: `linear-gradient(180deg, #1a2e1a 0%, #2d4a2d 100%)`,
+          margin: "0 -24px", borderRadius: "0 0 24px 24px",
+        }}>
+          <div style={{ fontSize: "0.7rem", color: "#b8c4b8", letterSpacing: "3px", textTransform: "uppercase", marginBottom: 12, fontFamily: "system-ui, sans-serif" }}>EST. 2026</div>
+          <h1 className="hero-title" style={{ fontSize: "2.6rem", fontWeight: 900, margin: 0, lineHeight: 1.1, color: "#fff", fontFamily: "Georgia, serif" }}>
+            Tacada Golf
           </h1>
-          <p style={{ fontSize: "1.3rem", fontWeight: 700, color: C.gold, margin: "6px 0 0" }}>{l.tagline}</p>
-          <p style={{ fontSize: "0.88rem", color: C.muted, maxWidth: 550, margin: "14px auto 0", lineHeight: 1.6 }}>{l.sub}</p>
-          <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 24, flexWrap: "wrap" }}>
-            <button style={{ background: C.accent, color: "#000", border: "none", borderRadius: 10, padding: "12px 28px", fontWeight: 700, fontSize: "0.9rem" }}>{l.cta1}</button>
-            <button style={{ background: "transparent", color: C.accent, border: `2px solid ${C.accent}`, borderRadius: 10, padding: "12px 28px", fontWeight: 700, fontSize: "0.9rem" }}>{l.cta2}</button>
+          <div style={{ width: 60, height: 2, background: C.goldLight, margin: "14px auto", borderRadius: 2 }} />
+          <p style={{ fontSize: "1.15rem", fontWeight: 600, color: C.goldLight, margin: "0", fontFamily: "Georgia, serif", fontStyle: "italic" }}>{l.tagline}</p>
+          <p style={{ fontSize: "0.88rem", color: "#b8c4b8", maxWidth: 520, margin: "16px auto 0", lineHeight: 1.7, fontFamily: "system-ui, sans-serif" }}>{l.sub}</p>
+          <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 28, flexWrap: "wrap" }}>
+            <button style={{ background: C.goldLight, color: C.dark, border: "none", borderRadius: 10, padding: "13px 30px", fontWeight: 700, fontSize: "0.88rem" }}>{l.cta1}</button>
+            <button style={{ background: "transparent", color: "#fff", border: `2px solid #ffffff40`, borderRadius: 10, padding: "13px 30px", fontWeight: 700, fontSize: "0.88rem" }}>{l.cta2}</button>
           </div>
         </div>
 
         {/* Stats */}
-        <div style={{ display: "flex", justifyContent: "space-around", flexWrap: "wrap", gap: 12, background: C.card, borderRadius: 16, padding: "20px 16px", marginBottom: 10, border: `1px solid ${C.border}` }}>
-          {[{ v: "50+", c: C.accent }, { v: "12", c: C.green }, { v: "2", c: C.gold }, { v: "30+", c: C.purple }].map((s, i) => (
+        <div style={{
+          display: "flex", justifyContent: "space-around", flexWrap: "wrap", gap: 12,
+          background: C.card, borderRadius: 16, padding: "22px 16px", marginTop: -20,
+          border: `1px solid ${C.border}`, boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
+          position: "relative", zIndex: 2,
+        }}>
+          {[{ v: "50+", c: C.accent }, { v: "12", c: C.accentLight }, { v: "2", c: C.gold }, { v: "30+", c: C.purple }].map((s, i) => (
             <div key={i} style={{ textAlign: "center", minWidth: 90 }}>
-              <div style={{ fontSize: "1.6rem", fontWeight: 900, color: s.c }}>{s.v}</div>
-              <div style={{ fontSize: "0.7rem", color: C.muted }}>{l.stats[i]}</div>
+              <div style={{ fontSize: "1.7rem", fontWeight: 900, color: s.c, fontFamily: "Georgia, serif" }}>{s.v}</div>
+              <div style={{ fontSize: "0.7rem", color: C.muted, fontFamily: "system-ui, sans-serif" }}>{l.stats[i]}</div>
             </div>
           ))}
         </div>
@@ -156,21 +181,25 @@ export default function Home() {
         {/* Sections */}
         {["eq", "nu", "to", "gu"].map(sec => (
           <div key={sec}>
-            <div style={{ marginBottom: 16, marginTop: 36 }}>
+            <div style={{ marginBottom: 16, marginTop: 44 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 4 }}>
                 <span style={{ fontSize: "1.3rem" }}>{secIcons[sec]}</span>
-                <h2 style={{ fontSize: "1.15rem", fontWeight: 800, margin: 0 }}>{l.sec[sec][0]}</h2>
+                <h2 style={{ fontSize: "1.2rem", fontWeight: 800, margin: 0, color: C.dark, fontFamily: "Georgia, serif" }}>{l.sec[sec][0]}</h2>
               </div>
-              <p style={{ fontSize: "0.8rem", color: C.muted, margin: 0, paddingLeft: 38 }}>{l.sec[sec][1]}</p>
-              <div style={{ height: 3, width: 60, background: secColors[sec], borderRadius: 2, marginTop: 8, marginLeft: 38 }} />
+              <p style={{ fontSize: "0.82rem", color: C.muted, margin: 0, paddingLeft: 38, fontFamily: "system-ui, sans-serif" }}>{l.sec[sec][1]}</p>
+              <div style={{ height: 2, width: 50, background: secColors[sec], borderRadius: 2, marginTop: 10, marginLeft: 38 }} />
             </div>
-            <div className="cards-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 12 }}>
+            <div className="cards-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(230px, 1fr))", gap: 14 }}>
               {l.cards.filter(c => c.s === sec).map((card, i) => {
-                const cardStyle = { background: C.card2, borderRadius: 14, padding: "16px 18px", border: `1px solid ${C.border}`, transition: "border-color 0.2s", textDecoration: "none", color: "inherit", display: "block" };
+                const cardStyle = {
+                  background: C.card, borderRadius: 14, padding: "20px 20px", border: `1px solid ${C.borderLight}`,
+                  transition: "all 0.2s", textDecoration: "none", color: "inherit", display: "block",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+                };
                 return card.link ? (
                   <a key={i} href={card.link} style={cardStyle}><CardInner card={card} /></a>
                 ) : (
-                  <div key={i} style={{ ...cardStyle, opacity: 0.7, cursor: "default" }}><CardInner card={card} /><div style={{ marginTop: 8, fontSize: "0.65rem", color: C.dim }}>{lang === "pt" ? "Em breve..." : "Coming soon..."}</div></div>
+                  <div key={i} style={{ ...cardStyle, opacity: 0.6 }}><CardInner card={card} /><div style={{ marginTop: 8, fontSize: "0.65rem", color: C.dim, fontFamily: "system-ui, sans-serif" }}>{lang === "pt" ? "Em breve..." : "Coming soon..."}</div></div>
                 );
               })}
             </div>
@@ -178,24 +207,31 @@ export default function Home() {
         ))}
 
         {/* Newsletter */}
-        <div style={{ background: `linear-gradient(135deg, ${C.card}, #1a2744)`, borderRadius: 18, padding: "30px 24px", marginTop: 40, textAlign: "center", border: `1px solid ${C.border}` }}>
-          <div style={{ fontSize: "1.5rem", marginBottom: 4 }}>📬</div>
-          <h3 style={{ fontSize: "1.1rem", fontWeight: 800, margin: "0 0 6px" }}>{l.nl[0]}</h3>
-          <p style={{ fontSize: "0.8rem", color: C.muted, margin: "0 0 16px" }}>{l.nl[1]}</p>
+        <div style={{
+          background: `linear-gradient(135deg, #1a2e1a, #2d4a2d)`,
+          borderRadius: 20, padding: "36px 28px", marginTop: 48, textAlign: "center",
+        }}>
+          <div style={{ fontSize: "1.5rem", marginBottom: 6 }}>📬</div>
+          <h3 style={{ fontSize: "1.15rem", fontWeight: 800, margin: "0 0 6px", color: "#fff", fontFamily: "Georgia, serif" }}>{l.nl[0]}</h3>
+          <p style={{ fontSize: "0.82rem", color: "#b8c4b8", margin: "0 0 18px", fontFamily: "system-ui, sans-serif" }}>{l.nl[1]}</p>
           <div style={{ display: "flex", gap: 8, justifyContent: "center", flexWrap: "wrap" }}>
-            <input placeholder="email@example.com" style={{ background: C.bg, border: `1px solid ${C.border}`, borderRadius: 10, padding: "10px 16px", color: C.text, fontSize: "0.85rem", width: 240, outline: "none" }} />
-            <button style={{ background: C.accent, color: "#000", border: "none", borderRadius: 10, padding: "10px 20px", fontWeight: 700, fontSize: "0.85rem" }}>{l.nl[2]}</button>
+            <input placeholder="email@example.com" style={{
+              background: "#ffffff15", border: `1px solid #ffffff30`, borderRadius: 10,
+              padding: "11px 18px", color: "#fff", fontSize: "0.85rem", width: 250, outline: "none",
+              fontFamily: "system-ui, sans-serif",
+            }} />
+            <button style={{ background: C.goldLight, color: C.dark, border: "none", borderRadius: 10, padding: "11px 22px", fontWeight: 700, fontSize: "0.85rem" }}>{l.nl[2]}</button>
           </div>
         </div>
 
         {/* Footer */}
-        <div style={{ textAlign: "center", padding: "30px 0 20px", borderTop: `1px solid ${C.border}`, marginTop: 40 }}>
+        <div style={{ textAlign: "center", padding: "34px 0 24px", borderTop: `1px solid ${C.border}`, marginTop: 48 }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginBottom: 8 }}>
             <span style={{ fontSize: "1.1rem" }}>⛳</span>
-            <span style={{ fontSize: "1rem", fontWeight: 800, color: C.accent }}>{l.brand}</span>
+            <span style={{ fontSize: "1rem", fontWeight: 800, color: C.dark, fontFamily: "Georgia, serif" }}>Tacada Golf</span>
           </div>
-          <p style={{ fontSize: "0.75rem", color: C.dim }}>{l.footer}</p>
-          <p style={{ fontSize: "0.65rem", color: C.dim }}>© 2026 Tacada Golf. All rights reserved.</p>
+          <p style={{ fontSize: "0.75rem", color: C.dim, fontFamily: "system-ui, sans-serif" }}>{l.footer}</p>
+          <p style={{ fontSize: "0.65rem", color: C.dim, fontFamily: "system-ui, sans-serif" }}>© 2026 Tacada Golf. All rights reserved.</p>
         </div>
       </div>
     </div>
