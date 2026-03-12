@@ -41,7 +41,7 @@ const t = {
       { s: "eq", title: "Hybrid vs Long Iron", desc: "3H or 3I? Data-driven comparison for your bag.", tag: "NEW", cat: "Hybrids", link: "/equipamento/hibrido-vs-ferro" },
       { s: "eq", title: "Best Drivers 2026", desc: "Top picks for distance, forgiveness, and value.", tag: "GUIDE", cat: "Drivers", link: null },
       { s: "eq", title: "Wedge Loft & Bounce", desc: "Build the perfect wedge setup for your short game.", tag: "ESSENTIAL", cat: "Wedges", link: null },
-      { s: "nu", title: "Palatinose: The Golfer's Secret Fuel", desc: "How this low-GI carb eliminates your back-nine crash.", tag: "SCIENCE", cat: "Nutrition", link: null },
+      { s: "nu", title: "Palatinose: The Golfer's Secret Fuel", desc: "How this low-GI carb eliminates your back-nine crash.", tag: "SCIENCE", cat: "Nutrition", link: "/nutricao/palatinose" },
       { s: "nu", title: "On-Course Nutrition Protocol", desc: "Hole-by-hole eating plan for all 18.", tag: "PROTOCOL", cat: "Energy", link: null },
       { s: "nu", title: "Pre-Round Meal Guide", desc: "What to eat 2 hours before tee time.", tag: "GUIDE", cat: "Nutrition", link: "/nutricao/refeicao-pre-jogo" },
       { s: "to", title: "Driving Range Simulator", desc: "Hit every club and watch the ball fly.", tag: "INTERACTIVE", cat: "Simulator", link: null },
@@ -73,7 +73,7 @@ const t = {
       { s: "eq", title: "Híbrido vs Ferro Longo", desc: "3H ou 3I? Comparação baseada em dados.", tag: "NOVO", cat: "Híbridos", link: "/equipamento/hibrido-vs-ferro" },
       { s: "eq", title: "Melhores Drivers 2026", desc: "Top escolhas em distância, perdão e custo-benefício.", tag: "GUIA", cat: "Drivers", link: null },
       { s: "eq", title: "Loft & Bounce dos Wedges", desc: "Monte o setup perfeito para seu jogo curto.", tag: "ESSENCIAL", cat: "Wedges", link: null },
-      { s: "nu", title: "Palatinose: O Combustível Secreto", desc: "Como esse carb de baixo IG elimina a fadiga nos últimos 9.", tag: "CIÊNCIA", cat: "Nutrição", link: null },
+      { s: "nu", title: "Palatinose: O Combustível Secreto", desc: "Como esse carb de baixo IG elimina a fadiga nos últimos 9.", tag: "CIÊNCIA", cat: "Nutrição", link: "/nutricao/palatinose" },
       { s: "nu", title: "Protocolo Nutricional no Campo", desc: "Plano alimentar buraco a buraco para os 18.", tag: "PROTOCOLO", cat: "Energia", link: null },
       { s: "nu", title: "Guia de Refeição Pré-Jogo", desc: "O que comer 2h antes do tee time.", tag: "GUIA", cat: "Nutrição", link: "/nutricao/refeicao-pre-jogo" },
       { s: "to", title: "Simulador de Driving Range", desc: "Acerte cada taco e veja a bola voar.", tag: "INTERATIVO", cat: "Simulador", link: null },
@@ -127,7 +127,6 @@ export default function Home() {
 
   return (
     <div style={{ background: C.bg }}>
-      {/* Nav */}
       <nav style={{
         display: "flex", alignItems: "center", justifyContent: "space-between",
         padding: "16px 24px", borderBottom: `1px solid ${C.border}`,
@@ -155,7 +154,6 @@ export default function Home() {
       </nav>
 
       <div style={{ maxWidth: 920, margin: "0 auto", padding: "0 24px" }}>
-        {/* Hero */}
         <div style={{
           textAlign: "center", padding: "56px 20px 40px",
           background: `linear-gradient(180deg, #1a2e1a 0%, #2d4a2d 100%)`,
@@ -174,7 +172,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Stats */}
         <div style={{
           display: "flex", justifyContent: "space-around", flexWrap: "wrap", gap: 12,
           background: C.card, borderRadius: 16, padding: "22px 16px", marginTop: -20,
@@ -196,7 +193,6 @@ export default function Home() {
           })}
         </div>
 
-        {/* Sections */}
         {["eq", "nu", "to", "gu"].map(sec => (
           <div key={sec} id={secIds[sec]}>
             <div style={{ marginBottom: 16, marginTop: 44 }}>
@@ -224,7 +220,6 @@ export default function Home() {
           </div>
         ))}
 
-        {/* Newsletter */}
         <div style={{
           background: `linear-gradient(135deg, #1a2e1a, #2d4a2d)`,
           borderRadius: 20, padding: "36px 28px", marginTop: 48, textAlign: "center",
@@ -242,7 +237,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Footer */}
         <div style={{ textAlign: "center", padding: "34px 0 24px", borderTop: `1px solid ${C.border}`, marginTop: 48 }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginBottom: 8 }}>
             <span style={{ fontSize: "1.1rem" }}>⛳</span>
