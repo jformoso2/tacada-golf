@@ -38,7 +38,7 @@ const t = {
     },
     cards: [
       { s: "eq", title: "Complete Iron Distance Guide", desc: "Average distances for every club with interactive chart.", tag: "POPULAR", cat: "Irons", link: "/equipamento/distancias" },
-      { s: "eq", title: "Hybrid vs Long Iron", desc: "3H or 3I? Data-driven comparison for your bag.", tag: "NEW", cat: "Hybrids", link: "/equipamento/hibrido" },
+      { s: "eq", title: "Hybrid vs Long Iron", desc: "3H or 3I? Data-driven comparison for your bag.", tag: "NEW", cat: "Hybrids", link: "/equipamento/hibrido-vs-ferro" },
       { s: "eq", title: "Best Drivers 2026", desc: "Top picks for distance, forgiveness, and value.", tag: "GUIDE", cat: "Drivers", link: null },
       { s: "eq", title: "Wedge Loft & Bounce", desc: "Build the perfect wedge setup for your short game.", tag: "ESSENTIAL", cat: "Wedges", link: null },
       { s: "nu", title: "Palatinose: The Golfer's Secret Fuel", desc: "How this low-GI carb eliminates your back-nine crash.", tag: "SCIENCE", cat: "Nutrition", link: null },
@@ -70,7 +70,7 @@ const t = {
     },
     cards: [
       { s: "eq", title: "Guia Completo de Distâncias", desc: "Distâncias médias para cada taco com gráfico interativo.", tag: "POPULAR", cat: "Ferros", link: "/equipamento/distancias" },
-      { s: "eq", title: "Híbrido vs Ferro Longo", desc: "3H ou 3I? Comparação baseada em dados.", tag: "NOVO", cat: "Híbridos", link: "/equipamento/hibrido"},
+      { s: "eq", title: "Híbrido vs Ferro Longo", desc: "3H ou 3I? Comparação baseada em dados.", tag: "NOVO", cat: "Híbridos", link: "/equipamento/hibrido-vs-ferro"},
       { s: "eq", title: "Melhores Drivers 2026", desc: "Top escolhas em distância, perdão e custo-benefício.", tag: "GUIA", cat: "Drivers", link: null },
       { s: "eq", title: "Loft & Bounce dos Wedges", desc: "Monte o setup perfeito para seu jogo curto.", tag: "ESSENCIAL", cat: "Wedges", link: null },
       { s: "nu", title: "Palatinose: O Combustível Secreto", desc: "Como esse carb de baixo IG elimina a fadiga nos últimos 9.", tag: "CIÊNCIA", cat: "Nutrição", link: null },
