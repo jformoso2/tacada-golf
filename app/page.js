@@ -2,30 +2,18 @@
 import { useState } from "react";
 
 const C = {
-  bg: "#f8f6f1",
-  card: "#ffffff",
-  card2: "#f0ede6",
-  accent: "#4a7c59",
-  accentLight: "#6b9e7a",
-  gold: "#b8860b",
-  goldLight: "#d4a847",
-  cream: "#f5f1e8",
-  dark: "#1a2e1a",
-  text: "#2d3a2e",
-  muted: "#6b7c6b",
-  dim: "#99a899",
-  border: "#d4cfc2",
-  borderLight: "#e8e3d9",
-  hero: "#1a2e1a",
-  purple: "#6b5b7b",
-  red: "#a04040",
-  blue: "#4a6b8a",
+  bg: "#f8f6f1", card: "#ffffff", card2: "#f0ede6",
+  accent: "#4a7c59", accentLight: "#6b9e7a",
+  gold: "#b8860b", goldLight: "#d4a847",
+  cream: "#f5f1e8", dark: "#1a2e1a",
+  text: "#2d3a2e", muted: "#6b7c6b", dim: "#99a899",
+  border: "#d4cfc2", borderLight: "#e8e3d9",
+  hero: "#1a2e1a", purple: "#6b5b7b", red: "#a04040", blue: "#4a6b8a",
 };
 
 const t = {
   en: {
-    brand: "Tacada Golf",
-    tagline: "Your Game. Elevated.",
+    brand: "Tacada Golf", tagline: "Your Game. Elevated.",
     sub: "The ultimate bilingual golf resource — guides, interactive tools, and science-backed performance tips for players of all levels.",
     langBtn: "🇧🇷 Português",
     nav: ["Home", "Equipment", "Performance", "Tools", "Guides"],
@@ -49,15 +37,14 @@ const t = {
       { s: "to", title: "Handicap Tracker", desc: "Track rounds and watch your handicap improve.", tag: "COMING SOON", cat: "Tracker", link: null },
       { s: "gu", title: "What is a Golf Handicap?", desc: "Complete guide to understanding, calculating, and improving your handicap.", tag: "NEW", cat: "Handicap", link: "/guias/handicap" },
       { s: "gu", title: "Breaking 100: A Roadmap", desc: "Step-by-step strategy to break the 100 barrier.", tag: "STRATEGY", cat: "Scoring", link: null },
-      { s: "gu", title: "Course Management 101", desc: "Think smarter — play to your strengths.", tag: "MENTAL", cat: "Strategy", link: null },
+      { s: "gu", title: "CBGolfe: Brazilian Golfer's Guide", desc: "How to join, get your handicap, and enter tournaments.", tag: "NEW", cat: "CBGolfe", link: "/guias/cbgolfe" },
     ],
     stats: ["Club Guides", "Interactive Tools", "Languages", "Performance Articles"],
     nl: ["Join the Fairway", "Weekly tips, tools & guides to your inbox.", "Subscribe"],
     footer: "Built with passion for the game.",
   },
   pt: {
-    brand: "Tacada Golf",
-    tagline: "Seu Jogo. Elevado.",
+    brand: "Tacada Golf", tagline: "Seu Jogo. Elevado.",
     sub: "O melhor recurso bilíngue de golfe — guias, ferramentas interativas e dicas de performance baseadas em ciência para jogadores de todos os níveis.",
     langBtn: "🇺🇸 English",
     nav: ["Início", "Equipamento", "Performance", "Ferramentas", "Guias"],
@@ -81,7 +68,7 @@ const t = {
       { s: "to", title: "Rastreador de Handicap", desc: "Acompanhe suas voltas e veja seu handicap melhorar.", tag: "EM BREVE", cat: "Rastreador", link: null },
       { s: "gu", title: "O Que é o Handicap no Golfe?", desc: "Guia completo para entender, calcular e melhorar seu handicap.", tag: "NOVO", cat: "Handicap", link: "/guias/handicap" },
       { s: "gu", title: "Quebrando os 100", desc: "Estratégia passo a passo para quebrar a barreira.", tag: "ESTRATÉGIA", cat: "Pontuação", link: null },
-      { s: "gu", title: "Gestão de Campo 101", desc: "Pense mais inteligente em cada buraco.", tag: "MENTAL", cat: "Estratégia", link: null },
+      { s: "gu", title: "CBGolfe: Guia do Golfista Brasileiro", desc: "Como se filiar, tirar handicap e participar de torneios.", tag: "NOVO", cat: "CBGolfe", link: "/guias/cbgolfe" },
     ],
     stats: ["Guias de Tacos", "Ferramentas Interativas", "Idiomas", "Artigos de Performance"],
     nl: ["Entre no Fairway", "Dicas, ferramentas e guias toda semana no seu email.", "Inscrever-se"],
@@ -105,14 +92,12 @@ const secIds = { eq: "equipamento", nu: "nutricao", to: "ferramentas", gu: "guia
 export default function Home() {
   const [lang, setLang] = useState("pt");
   const l = t[lang];
-
   const statsData = [
     { v: "50+", c: C.accent, href: "#equipamento" },
     { v: "12", c: C.accentLight, href: "#ferramentas" },
     { v: "2", c: C.gold, href: null },
     { v: "30+", c: C.purple, href: "#nutricao" },
   ];
-
   const CardInner = ({ card }) => (
     <>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
@@ -124,15 +109,9 @@ export default function Home() {
       {card.link && <div style={{ marginTop: 10, fontSize: "0.75rem", color: C.accent, fontWeight: 600, fontFamily: "system-ui, sans-serif" }}>{lang === "pt" ? "Ler artigo →" : "Read article →"}</div>}
     </>
   );
-
   return (
     <div style={{ background: C.bg }}>
-      <nav style={{
-        display: "flex", alignItems: "center", justifyContent: "space-between",
-        padding: "16px 24px", borderBottom: `1px solid ${C.border}`,
-        background: "#ffffffee", position: "sticky", top: 0, zIndex: 10,
-        backdropFilter: "blur(12px)",
-      }}>
+      <nav style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "16px 24px", borderBottom: `1px solid ${C.border}`, background: "#ffffffee", position: "sticky", top: 0, zIndex: 10, backdropFilter: "blur(12px)" }}>
         <a href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
           <span style={{ fontSize: "1.4rem" }}>⛳</span>
           <span style={{ fontSize: "1.15rem", fontWeight: 800, color: C.dark, fontFamily: "Georgia, serif", letterSpacing: "-0.5px" }}>Tacada Golf</span>
@@ -141,28 +120,16 @@ export default function Home() {
           <div className="nav-links" style={{ display: "flex", gap: 20 }}>
             {l.nav.map((n, i) => {
               const navLinks = ["#", "#equipamento", "#nutricao", "#ferramentas", "#guias"];
-              return (
-                <a key={i} href={navLinks[i]} style={{ fontSize: "0.82rem", color: i === 0 ? C.accent : C.muted, fontWeight: i === 0 ? 700 : 500, fontFamily: "system-ui, sans-serif", textDecoration: "none" }}>{n}</a>
-              );
+              return (<a key={i} href={navLinks[i]} style={{ fontSize: "0.82rem", color: i === 0 ? C.accent : C.muted, fontWeight: i === 0 ? 700 : 500, fontFamily: "system-ui, sans-serif", textDecoration: "none" }}>{n}</a>);
             })}
           </div>
-          <button onClick={() => setLang(lang === "en" ? "pt" : "en")} style={{
-            background: C.cream, border: `1px solid ${C.border}`, borderRadius: 8,
-            padding: "6px 14px", color: C.text, fontSize: "0.75rem", fontWeight: 600,
-          }}>{l.langBtn}</button>
+          <button onClick={() => setLang(lang === "en" ? "pt" : "en")} style={{ background: C.cream, border: `1px solid ${C.border}`, borderRadius: 8, padding: "6px 14px", color: C.text, fontSize: "0.75rem", fontWeight: 600 }}>{l.langBtn}</button>
         </div>
       </nav>
-
       <div style={{ maxWidth: 920, margin: "0 auto", padding: "0 24px" }}>
-        <div style={{
-          textAlign: "center", padding: "56px 20px 40px",
-          background: `linear-gradient(180deg, #1a2e1a 0%, #2d4a2d 100%)`,
-          margin: "0 -24px", borderRadius: "0 0 24px 24px",
-        }}>
+        <div style={{ textAlign: "center", padding: "56px 20px 40px", background: `linear-gradient(180deg, #1a2e1a 0%, #2d4a2d 100%)`, margin: "0 -24px", borderRadius: "0 0 24px 24px" }}>
           <div style={{ fontSize: "0.7rem", color: "#b8c4b8", letterSpacing: "3px", textTransform: "uppercase", marginBottom: 12, fontFamily: "system-ui, sans-serif" }}>EST. 2026</div>
-          <h1 className="hero-title" style={{ fontSize: "2.6rem", fontWeight: 900, margin: 0, lineHeight: 1.1, color: "#fff", fontFamily: "Georgia, serif" }}>
-            Tacada Golf
-          </h1>
+          <h1 className="hero-title" style={{ fontSize: "2.6rem", fontWeight: 900, margin: 0, lineHeight: 1.1, color: "#fff", fontFamily: "Georgia, serif" }}>Tacada Golf</h1>
           <div style={{ width: 60, height: 2, background: C.goldLight, margin: "14px auto", borderRadius: 2 }} />
           <p style={{ fontSize: "1.15rem", fontWeight: 600, color: C.goldLight, margin: "0", fontFamily: "Georgia, serif", fontStyle: "italic" }}>{l.tagline}</p>
           <p style={{ fontSize: "0.88rem", color: "#b8c4b8", maxWidth: 520, margin: "16px auto 0", lineHeight: 1.7, fontFamily: "system-ui, sans-serif" }}>{l.sub}</p>
@@ -171,28 +138,12 @@ export default function Home() {
             <a href="#ferramentas" style={{ background: "transparent", color: "#fff", border: `2px solid #ffffff40`, borderRadius: 10, padding: "13px 30px", fontWeight: 700, fontSize: "0.88rem", textDecoration: "none", display: "inline-block" }}>{l.cta2}</a>
           </div>
         </div>
-
-        <div style={{
-          display: "flex", justifyContent: "space-around", flexWrap: "wrap", gap: 12,
-          background: C.card, borderRadius: 16, padding: "22px 16px", marginTop: -20,
-          border: `1px solid ${C.border}`, boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
-          position: "relative", zIndex: 2,
-        }}>
+        <div style={{ display: "flex", justifyContent: "space-around", flexWrap: "wrap", gap: 12, background: C.card, borderRadius: 16, padding: "22px 16px", marginTop: -20, border: `1px solid ${C.border}`, boxShadow: "0 4px 20px rgba(0,0,0,0.06)", position: "relative", zIndex: 2 }}>
           {statsData.map((s, i) => {
-            const inner = (
-              <div style={{ textAlign: "center", minWidth: 90, cursor: s.href ? "pointer" : "default" }}>
-                <div style={{ fontSize: "1.7rem", fontWeight: 900, color: s.c, fontFamily: "Georgia, serif" }}>{s.v}</div>
-                <div style={{ fontSize: "0.7rem", color: C.muted, fontFamily: "system-ui, sans-serif" }}>{l.stats[i]}</div>
-              </div>
-            );
-            return s.href ? (
-              <a key={i} href={s.href} style={{ textDecoration: "none" }}>{inner}</a>
-            ) : (
-              <div key={i}>{inner}</div>
-            );
+            const inner = (<div style={{ textAlign: "center", minWidth: 90, cursor: s.href ? "pointer" : "default" }}><div style={{ fontSize: "1.7rem", fontWeight: 900, color: s.c, fontFamily: "Georgia, serif" }}>{s.v}</div><div style={{ fontSize: "0.7rem", color: C.muted, fontFamily: "system-ui, sans-serif" }}>{l.stats[i]}</div></div>);
+            return s.href ? (<a key={i} href={s.href} style={{ textDecoration: "none" }}>{inner}</a>) : (<div key={i}>{inner}</div>);
           })}
         </div>
-
         {["eq", "nu", "to", "gu"].map(sec => (
           <div key={sec} id={secIds[sec]}>
             <div style={{ marginBottom: 16, marginTop: 44 }}>
@@ -205,11 +156,7 @@ export default function Home() {
             </div>
             <div className="cards-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(230px, 1fr))", gap: 14 }}>
               {l.cards.filter(c => c.s === sec).map((card, i) => {
-                const cardStyle = {
-                  background: C.card, borderRadius: 14, padding: "20px 20px", border: `1px solid ${C.borderLight}`,
-                  transition: "all 0.2s", textDecoration: "none", color: "inherit", display: "block",
-                  boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
-                };
+                const cardStyle = { background: C.card, borderRadius: 14, padding: "20px 20px", border: `1px solid ${C.borderLight}`, transition: "all 0.2s", textDecoration: "none", color: "inherit", display: "block", boxShadow: "0 2px 8px rgba(0,0,0,0.04)" };
                 return card.link ? (
                   <a key={i} href={card.link} style={cardStyle}><CardInner card={card} /></a>
                 ) : (
@@ -219,24 +166,15 @@ export default function Home() {
             </div>
           </div>
         ))}
-
-        <div style={{
-          background: `linear-gradient(135deg, #1a2e1a, #2d4a2d)`,
-          borderRadius: 20, padding: "36px 28px", marginTop: 48, textAlign: "center",
-        }}>
+        <div style={{ background: `linear-gradient(135deg, #1a2e1a, #2d4a2d)`, borderRadius: 20, padding: "36px 28px", marginTop: 48, textAlign: "center" }}>
           <div style={{ fontSize: "1.5rem", marginBottom: 6 }}>📬</div>
           <h3 style={{ fontSize: "1.15rem", fontWeight: 800, margin: "0 0 6px", color: "#fff", fontFamily: "Georgia, serif" }}>{l.nl[0]}</h3>
           <p style={{ fontSize: "0.82rem", color: "#b8c4b8", margin: "0 0 18px", fontFamily: "system-ui, sans-serif" }}>{l.nl[1]}</p>
           <div style={{ display: "flex", gap: 8, justifyContent: "center", flexWrap: "wrap" }}>
-            <input placeholder="email@example.com" style={{
-              background: "#ffffff15", border: `1px solid #ffffff30`, borderRadius: 10,
-              padding: "11px 18px", color: "#fff", fontSize: "0.85rem", width: 250, outline: "none",
-              fontFamily: "system-ui, sans-serif",
-            }} />
+            <input placeholder="email@example.com" style={{ background: "#ffffff15", border: `1px solid #ffffff30`, borderRadius: 10, padding: "11px 18px", color: "#fff", fontSize: "0.85rem", width: 250, outline: "none", fontFamily: "system-ui, sans-serif" }} />
             <button style={{ background: C.goldLight, color: C.dark, border: "none", borderRadius: 10, padding: "11px 22px", fontWeight: 700, fontSize: "0.85rem" }}>{l.nl[2]}</button>
           </div>
         </div>
-
         <div style={{ textAlign: "center", padding: "34px 0 24px", borderTop: `1px solid ${C.border}`, marginTop: 48 }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginBottom: 8 }}>
             <span style={{ fontSize: "1.1rem" }}>⛳</span>
