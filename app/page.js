@@ -100,10 +100,18 @@ const tagCol = {
 
 const secIcons = { eq: "🏌️", nu: "🔬", to: "🛠️", gu: "📚" };
 const secColors = { eq: C.accent, nu: "#6b9e7a", to: C.gold, gu: C.purple };
+const secIds = { eq: "equipamento", nu: "nutricao", to: "ferramentas", gu: "guias" };
 
 export default function Home() {
   const [lang, setLang] = useState("pt");
   const l = t[lang];
+
+  const statsData = [
+    { v: "50+", c: C.accent, href: "#equipamento" },
+    { v: "12", c: C.accentLight, href: "#ferramentas" },
+    { v: "2", c: C.gold, href: null },
+    { v: "30+", c: C.purple, href: "#nutricao" },
+  ];
 
   const CardInner = ({ card }) => (
     <>
@@ -126,15 +134,18 @@ export default function Home() {
         background: "#ffffffee", position: "sticky", top: 0, zIndex: 10,
         backdropFilter: "blur(12px)",
       }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <a href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
           <span style={{ fontSize: "1.4rem" }}>⛳</span>
           <span style={{ fontSize: "1.15rem", fontWeight: 800, color: C.dark, fontFamily: "Georgia, serif", letterSpacing: "-0.5px" }}>Tacada Golf</span>
-        </div>
+        </a>
         <div style={{ display: "flex", gap: 20, alignItems: "center", flexWrap: "wrap" }}>
           <div className="nav-links" style={{ display: "flex", gap: 20 }}>
-            {l.nav.map((n, i) => (
-              <span key={i} style={{ fontSize: "0.82rem", color: i === 0 ? C.accent : C.muted, fontWeight: i === 0 ? 700 : 500, fontFamily: "system-ui, sans-serif" }}>{n}</span>
-            ))}
+            {l.nav.map((n, i) => {
+              const navLinks = ["#", "#equipamento", "#nutricao", "#ferramentas", "#guias"];
+              return (
+                <a key={i} href={navLinks[i]} style={{ fontSize: "0.82rem", color: i === 0 ? C.accent : C.muted, fontWeight: i === 0 ? 700 : 500, fontFamily: "system-ui, sans-serif", textDecoration: "none" }}>{n}</a>
+              );
+            })}
           </div>
           <button onClick={() => setLang(lang === "en" ? "pt" : "en")} style={{
             background: C.cream, border: `1px solid ${C.border}`, borderRadius: 8,
@@ -158,8 +169,8 @@ export default function Home() {
           <p style={{ fontSize: "1.15rem", fontWeight: 600, color: C.goldLight, margin: "0", fontFamily: "Georgia, serif", fontStyle: "italic" }}>{l.tagline}</p>
           <p style={{ fontSize: "0.88rem", color: "#b8c4b8", maxWidth: 520, margin: "16px auto 0", lineHeight: 1.7, fontFamily: "system-ui, sans-serif" }}>{l.sub}</p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 28, flexWrap: "wrap" }}>
-            <button style={{ background: C.goldLight, color: C.dark, border: "none", borderRadius: 10, padding: "13px 30px", fontWeight: 700, fontSize: "0.88rem" }}>{l.cta1}</button>
-            <button style={{ background: "transparent", color: "#fff", border: `2px solid #ffffff40`, borderRadius: 10, padding: "13px 30px", fontWeight: 700, fontSize: "0.88rem" }}>{l.cta2}</button>
+            <a href="#equipamento" style={{ background: C.goldLight, color: C.dark, border: "none", borderRadius: 10, padding: "13px 30px", fontWeight: 700, fontSize: "0.88rem", textDecoration: "none", display: "inline-block" }}>{l.cta1}</a>
+            <a href="#ferramentas" style={{ background: "transparent", color: "#fff", border: `2px solid #ffffff40`, borderRadius: 10, padding: "13px 30px", fontWeight: 700, fontSize: "0.88rem", textDecoration: "none", display: "inline-block" }}>{l.cta2}</a>
           </div>
         </div>
 
@@ -170,17 +181,24 @@ export default function Home() {
           border: `1px solid ${C.border}`, boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
           position: "relative", zIndex: 2,
         }}>
-          {[{ v: "50+", c: C.accent }, { v: "12", c: C.accentLight }, { v: "2", c: C.gold }, { v: "30+", c: C.purple }].map((s, i) => (
-            <div key={i} style={{ textAlign: "center", minWidth: 90 }}>
-              <div style={{ fontSize: "1.7rem", fontWeight: 900, color: s.c, fontFamily: "Georgia, serif" }}>{s.v}</div>
-              <div style={{ fontSize: "0.7rem", color: C.muted, fontFamily: "system-ui, sans-serif" }}>{l.stats[i]}</div>
-            </div>
-          ))}
+          {statsData.map((s, i) => {
+            const inner = (
+              <div style={{ textAlign: "center", minWidth: 90, cursor: s.href ? "pointer" : "default" }}>
+                <div style={{ fontSize: "1.7rem", fontWeight: 900, color: s.c, fontFamily: "Georgia, serif" }}>{s.v}</div>
+                <div style={{ fontSize: "0.7rem", color: C.muted, fontFamily: "system-ui, sans-serif" }}>{l.stats[i]}</div>
+              </div>
+            );
+            return s.href ? (
+              <a key={i} href={s.href} style={{ textDecoration: "none" }}>{inner}</a>
+            ) : (
+              <div key={i}>{inner}</div>
+            );
+          })}
         </div>
 
         {/* Sections */}
         {["eq", "nu", "to", "gu"].map(sec => (
-          <div key={sec}>
+          <div key={sec} id={secIds[sec]}>
             <div style={{ marginBottom: 16, marginTop: 44 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 4 }}>
                 <span style={{ fontSize: "1.3rem" }}>{secIcons[sec]}</span>
