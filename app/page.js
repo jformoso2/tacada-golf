@@ -75,7 +75,7 @@ const t = {
       { s: "eq", title: "Loft & Bounce dos Wedges", desc: "Monte o setup perfeito para seu jogo curto.", tag: "ESSENCIAL", cat: "Wedges", link: null },
       { s: "nu", title: "Palatinose: O Combustível Secreto", desc: "Como esse carb de baixo IG elimina a fadiga nos últimos 9.", tag: "CIÊNCIA", cat: "Nutrição", link: null },
       { s: "nu", title: "Protocolo Nutricional no Campo", desc: "Plano alimentar buraco a buraco para os 18.", tag: "PROTOCOLO", cat: "Energia", link: null },
-      { s: "nu", title: "Guia de Refeição Pré-Jogo", desc: "O que comer 2h antes do tee time.", tag: "GUIA", cat: "Nutrição", link: null },
+      { s: "nu", title: "Guia de Refeição Pré-Jogo", desc: "O que comer 2h antes do tee time.", tag: "GUIA", cat: "Nutrição", link: "/nutricao/refeicao-pre-jogo" },
       { s: "to", title: "Simulador de Driving Range", desc: "Acerte cada taco e veja a bola voar.", tag: "INTERATIVO", cat: "Simulador", link: null },
       { s: "to", title: "Calculadora de Distâncias", desc: "Distâncias personalizadas pela sua velocidade de swing.", tag: "FERRAMENTA", cat: "Calculadora", link: null },
       { s: "to", title: "Rastreador de Handicap", desc: "Acompanhe suas voltas e veja seu handicap melhorar.", tag: "EM BREVE", cat: "Rastreador", link: null },
