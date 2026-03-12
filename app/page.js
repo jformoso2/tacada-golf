@@ -43,7 +43,7 @@ const t = {
       { s: "eq", title: "Wedge Loft & Bounce", desc: "Build the perfect wedge setup for your short game.", tag: "ESSENTIAL", cat: "Wedges", link: null },
       { s: "nu", title: "Palatinose: The Golfer's Secret Fuel", desc: "How this low-GI carb eliminates your back-nine crash.", tag: "SCIENCE", cat: "Nutrition", link: null },
       { s: "nu", title: "On-Course Nutrition Protocol", desc: "Hole-by-hole eating plan for all 18.", tag: "PROTOCOL", cat: "Energy", link: null },
-      { s: "nu", title: "Pre-Round Meal Guide", desc: "What to eat 2 hours before tee time.", tag: "GUIDE", cat: "Nutrition", link: null },
+      { s: "nu", title: "Pre-Round Meal Guide", desc: "What to eat 2 hours before tee time.", tag: "GUIDE", cat: "Nutrition", link: "/nutricao/refeicao-pre-jogo" },
       { s: "to", title: "Driving Range Simulator", desc: "Hit every club and watch the ball fly.", tag: "INTERACTIVE", cat: "Simulator", link: null },
       { s: "to", title: "Club Distance Calculator", desc: "Personalized distances based on your swing speed.", tag: "TOOL", cat: "Calculator", link: null },
       { s: "to", title: "Handicap Tracker", desc: "Track rounds and watch your handicap improve.", tag: "COMING SOON", cat: "Tracker", link: null },
